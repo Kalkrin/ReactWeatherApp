@@ -53,7 +53,7 @@
 }
 
 .weatherBlockPicture > img {
-  margin: 2% 0;
+  margin: 0 auto;
   height: 100%;
   width: 80%;
 }
@@ -61,15 +61,39 @@
 .weatherBlockItem{
   height: 33.33%;
   width:33.33%;
-  border: 1px solid black;
 }
 
-.item {
+.weatherCard {
   height: 500px;
   width: 250px;
-  background-color: lightgreen;
+  background-color: whitesmoke;
+  border: solid cyan 1px;
+  border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.weatherCardImage{
+  background-color: deepskyblue;
+  height: 30%;
+  width: 100%;
+}
+
+.weatherCardImage > img {
+  height: 80%;
+  width: 80%;
+  margin-top: 5%;
+}
+
+.weatherCardItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 10%;
 }
 
 label {
@@ -105,17 +129,28 @@ input {
     width: 80%;
   }
 
+  .weatherCard {
+    flex-wrap: wrap;
+  }
+
+  .weatherCardImage{
+    width: 33%;
+    height: 66.66%;
+  }
+  
+  .weatherCardItem {
+    width: 33.33%;
+    height: 33.33%;
+  }
+
   .curWeatherBlock {
     width: 100%;
   }
 
 
-  .item { 
-    height: 200px;
+  .weatherCard { 
+    height: 150px;
     width: 100%;
-  }
-
-  .item + .item {
     margin-top: 5%;
     margin-left: 0px;
   }
