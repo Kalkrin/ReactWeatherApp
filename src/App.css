@@ -8,7 +8,7 @@
 
 .banner, .btn {
   font-family: 'Lilita One', cursive;
-  background-color: skyblue;
+  background-color: deepskyblue;
   color: white;
 }
 
@@ -21,17 +21,47 @@
 }
 
 .container {
-  margin: 10px auto;
+  margin: 10px auto 0px auto;
   width: 80%;
   text-align: center;
 }
 
 .flexContainer {
-  margin: 50px auto 50px auto;
+  margin: 10px auto;
   width: 80%;
   display: flex;
-  flex-wrap: wrap; 
   justify-content: center;
+}
+
+.curWeatherBlock {
+  margin: 0 auto;
+  width: 50%;
+  height: 150px;
+  background-color: whitesmoke;
+  border: solid cyan 1px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.weatherBlockPicture {
+  background-color: deepskyblue;
+  height: 66.66%;
+  width: 33.33%;
+  margin: 0 auto;
+}
+
+.weatherBlockPicture > img {
+  margin: 2% 0;
+  height: 100%;
+  width: 80%;
+}
+
+.weatherBlockItem{
+  height: 33.33%;
+  width:33.33%;
+  border: 1px solid black;
 }
 
 .item {
@@ -40,7 +70,6 @@
   background-color: lightgreen;
   margin-left: 5px;
   margin-right: 5px;
-  margin-top: 10px;
 }
 
 label {
@@ -51,7 +80,7 @@ label {
 input {
   width: 90%;
   height: 40px;
-  margin: 5px;
+  margin: 10px 0px;
   padding: 3px 7px;
   font-size: 17px;
 }
@@ -63,7 +92,9 @@ input {
   width: 300px;
   border: none;
   font-size: x-large;
+  border: solid 2px lime;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 @media (max-width: 800px) {
@@ -73,6 +104,11 @@ input {
     justify-content: flex-start;
     width: 80%;
   }
+
+  .curWeatherBlock {
+    width: 100%;
+  }
+
 
   .item { 
     height: 200px;
