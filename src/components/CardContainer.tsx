@@ -26,12 +26,10 @@ const CardContainer = (props: any) => {
     setForecasts(forecastList);
   }, [forecastData]);
 
-  console.log(forecasts.length);
   return (
     <>
       { forecasts.length > 0 &&
         forecasts.map((cast: any, index: number) => {
-          console.log(cast);
           return(<Card key={index} weather={cast}/>)
         })}
     </>
