@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+body {
+  background-color: lightslategray;
+}
+
 .banner, .btn {
   font-family: 'Lilita One', cursive;
   background-color: deepskyblue;
@@ -37,8 +41,8 @@
   margin: 0 auto;
   width: 50%;
   height: 150px;
-  background-color: whitesmoke;
-  border: solid cyan 1px;
+  background-color: lightgray;
+  border: solid cyan 2px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -66,8 +70,8 @@
 .weatherCard {
   height: 500px;
   width: 250px;
-  background-color: whitesmoke;
-  border: solid cyan 1px;
+  background-color: lightseagreen;
+  border: solid cyan 2px;
   border-radius: 5px;
   margin-left: 5px;
   margin-right: 5px;

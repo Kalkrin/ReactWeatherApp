@@ -18,7 +18,7 @@ function App() {
         navigator.geolocation.getCurrentPosition(success, error);
       }
     };
-
+    console.log('in useffect');
     checkLocation();
   }, [location]);
 
@@ -37,6 +37,12 @@ function App() {
     }
   };
 
+  const search = async (search:string) => {
+    console.log('hit search');
+    setCurrentWeather(await fetchCurrentWeatherBySearch(search));
+    setForecast(await fetchForecastBySearch(search));
+  };
+
   const error = () => {
     console.log(error.toString);
     alert('Could not retrieve location. Please search for weather data.');
@@ -52,6 +58,15 @@ function App() {
     return data;
   };
 
+  const fetchCurrentWeatherBySearch = async (search:string) => {
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}`
+    );
+    const data = await res.json();
+    console.log(data);
+    return data;
+  }
+
   //Get Forecast
   const fetchForecast = async () => {
     const res = await fetch(
@@ -62,11 +77,20 @@ function App() {
     return data;
   };
 
+  const fetchForecastBySearch = async (search:string) => {
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${search}&appid=${apiKey}`
+    );
+    const data = await res.json()
+    console.log(`Forecast data by search: ${JSON.stringify(data)}`);
+    return data;
+  };
+
   return (
     <div className='App'>
       <Banner />
       <div className='container'>
-        <SearchBox />
+        {currentWeather && <SearchBox location={`${currentWeather.name}, ${currentWeather.sys.country}`} search={search} /> } 
         {currentWeather && <CurrentWeather weather={currentWeather} />}
       </div>
       <div className='flexContainer'>

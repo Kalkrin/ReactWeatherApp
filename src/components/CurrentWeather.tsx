@@ -1,7 +1,7 @@
 import { celcFromKalv, mPerSecToKmPerHour } from '../utils/Utils';
 
 const CurrentWeather = (props: any) => {
-  const weatherData = props.weather;
+  const weatherData:any = props.weather;
   return (
     <div className='curWeatherBlock'>
       <div className='weatherBlockPicture'>

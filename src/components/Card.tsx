@@ -29,7 +29,7 @@ const Card = (props: any) => {
       <p>{`Cloud Coverage: ${weather.clouds.all}%`}</p>
       </div>
       <div className='weatherCardItem'>
-        <p>Raindfall: {weather.rain ? `${weather.rain['1h']}mm` : '0mm'}</p>
+        <p>Rainfall: {weather.rain ? `${weather.rain['3h']}mm` : '0mm'}</p>
       </div>
     </div>
   );
